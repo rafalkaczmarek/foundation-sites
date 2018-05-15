@@ -123,8 +123,11 @@ class DropdownMenu extends Plugin {
       }
     };
 
-    if (this.options.clickOpen || hasTouch) {
-      this.$menuItems.on('click.zf.dropdownMenu touchstart.zf.dropdownMenu', handleClickFn);
+    if (this.options.clickOpen) {
+      this.$menuItems.on('click.zf.dropdownMenu', handleClickFn);
+    }
+    if (hasTouch) {
+      this.$menuItems.on('touchstart.zf.dropdownMenu', handleClickFn);
     }
 
     // Handle Leaf element Clicks
